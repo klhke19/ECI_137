@@ -1,0 +1,525 @@
+
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} 
+\usepackage{amsmath, amsthm, amssymb} % AMS Math Package
+\usepackage{graphicx} % Allows for eps images
+\usepackage{multicol} % Allows for multiple columns
+\usepackage{framed,color}
+\usepackage{fancybox}
+\usepackage{mdframed}
+\usepackage{float}
+\usepackage{caption,subcaption}
+
+
+\usepackage{geometry}
+\geometry{
+top=0.5in,
+inner=0.5in,
+outer=0.5in,
+bottom=0.5in,
+headheight=1ex,
+headsep=3ex
+}
+
+
+ % Sets margins and page size
+\pagestyle{empty} % Removes page numbers
+\makeatletter % Need for anything that contains an @ command 
+\renewcommand{\maketitle} % Redefine maketitle to conserve space
+{ \begingroup \vskip 10pt \begin{center} \large {\bf \@title}
+	\vskip 10pt \large \@author \hskip 20pt \@date \end{center}
+  \vskip 10pt \endgroup \setcounter{footnote}{0} }
+\makeatother % End of region containing @ commands
+\renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
+% \DeclareMathOperator{\Sample}{Sample}
+\let\vaccent=\v % rename builtin command \v{} to \vaccent{}
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} 
+% for vectors of Greek letters
+\newcommand{\uv}[1]{\ensuremath{\mathbf{\hat{#1}}}} % for unit vector
+\newcommand{\abs}[1]{\left| #1 \right|} % for absolute value
+\newcommand{\avg}[1]{\left< #1 \right>} % for average
+\let\underdot=\d % rename builtin command \d{} to \underdot{}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
+\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
+% for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} 
+% for double partial derivatives
+\newcommand{\pdc}[3]{\left( \frac{\partial #1}{\partial #2}
+ \right)_{#3}} % for thermodynamic partial derivatives
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right|
+ \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right|
+ #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
+\newcommand{\grad}[1]{\gv{\nabla} #1} % for gradient
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \cdot #1} % for divergence
+\newcommand{\curl}[1]{\gv{\nabla} \times #1} % for curl
+\let\baraccent=\= % rename builtin command \= to \baraccent
+\renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancyplain}
+\usepackage{lastpage}
+\usepackage{siunitx}
+\pagenumbering{arabic}
+
+\lhead{Kyle Hoke}
+\chead{ECI 137, SPHW 1}
+\rhead{Page \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{}
+
+%%% section* TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+
+%%% User Defined Commands %%%%
+\newcommand{\f}[1]{f_{#1}(x)}
+\newcommand{\axis}{
+		\draw[->,thick](0,0) -- (0,5);
+		\node[above] at (0,5) {$x$};
+		\draw[->,thick](0,0) -- (5,0);
+		\node[right] at(5,0){$y$};
+		}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\LARGE ECI 137 SPHW 1}
+\author{Kyle Hoke}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+\section{Q1: Answers}
+
+\subsection{a.}
+I am a graduate student in the materials science program. I have a B.S. in Physics and should be completing my M.S. by the end of the quarter. My father, and many of my uncles have been in construction my entire life. I remember visiting job sites in my home town that my father was superintendent on. I had always been attracted to construction, but wanted to find my own way in life. Quite a bit has happened since then and now, but suffice it to say that I am ready to settle down with my girlfriend and start a lifelong career, and I want that to happen with a general contractor. I am currently apply for project engineer positions at different general contractors up and down the west coast.
+
+\subsection{b.}
+I see myself in operations, working for a general contractor. I want to start as a project engineer, a position that many companies have a training program for. 
+
+\subsection{c.}
+Mostly vertical construction projects. Certainly projects in the commercial sector, I believe that residential construction would be a little slow paced for what I’m looking for. However, I certainly would not rule out heavy projects, or any large scale public projects that help improve a deteriorating national infrastructure.
+
+\subsection{d.}
+I think that basically anywhere on the west coast would provide the greatest opportunity for a project engineer position, especially anywhere near a large city such as Los Angeles or Seattle. Based on the rankings in the ENR there are many contractors along the west coast that are doing quite well, and have moved up in the rankings from last year which indicates that their profits have been increasing. As I am not willing to move to the Midwest or the east coast. All of the contractors in the west coast region have the benefit of being located in an area I wish to live. 
+
+\section{Q2: Answers}
+
+\subsection{a.}
+Schacht talks about the internet pushing knowledge into a communal setting that is no longer ‘owned’ by the experts. He uses an analogy with the animation industry to highlight how high school students can now do in their own home, what once used to take a large corporations with many resources. He states that this same change will take place in the engineering world with the advent of e-manufacturing and the ability for people to create an electronic description of a product and have it mailed to them. This article, written in 2001, was certainly correct. Things have progressed even beyond the point of have to contract a company to have a component created. Depending on the material needs of the part desired, it may be printable in ones own home!
+
+\subsection{b.}
+France emphasized a theoretical education in engineering through its technical schools. These schools not only taught theory in engineering, but also groomed the students to be statesmen and hold elite positions in the society. The British engineering culture evolved through practical hands on training. There were no formal school until the 1900's, thus experience and apprenticeships were how engineers were trained in Britain These engineers were not groomed for anything other than jobs that required engineers. The elite of Britain received their education through the church or the army. 
+
+\subsection{c.}
+The attributes of the “entrepreneurial engineer” of this century are include:
+\begin{enumerate}
+	\item Knowing everything – using the internet to gather and use information quickly
+	\item Can do anything – have solid understanding of basics and the ability to apply it to any task
+	\item Collaborates – can work with anyone, anywhere
+	\item Innovation – has the creativity, motivation, and leadership skills needed to bring an idea into being
+\end{enumerate}
+
+\subsection{d.}
+According to the authors the engineering student of the future will learn from a computer. The transfer of information can be tailored to the specific needs of the student according to their learning ability. This will ensure mastery of every step and allow for the student to learn new topics as they become relevant. The time spent with faculty can then focus on communication skills, understanding the social context of engineering, and fostering an innovative and entrepreneurial mindset.
+
+\subsection{e.}
+The authors claim that the typical “show stoppers” for solving engineering problems in the future will be understanding human behavior and designing systems, structures, and products that essentially predict human behavior. Our knowledge of the world around is far greater than our knowledge of ourselves. Understanding humanity and being able to effectively communicate why these systems, structures, and products are important and useful will be instrumental in their implementation. The author uses the example of greenhouse gas emissions to illustrate this point. With our current technology we could solve the problem of global warming now, but we would have to convince the rest of the world that it could be done, and why it is necessary and important.
+
+\subsection{f.}
+The article by Tryggvason and Apelian relates to the lab 1 exercise in a few ways. First we must be ready to assume any of the available roles for the exercise. This means we must "know everything" and we can accomplish this by researching the role of each agency using the internet. Second it will help instruct the students on effective social engineering. We must communicate with each other while trying to bring about the best outcome for the stakeholders we represent. Third, we must find creative solutions in a collaborative setting in order to reach a solution that all invested parties will find agreeable.
+
+\subsection{g.}
+The authors believe that with skill becoming a commodity, the engineers of the future must all be extraordinary as repetitive engineering tasks will be phased out. The future engineer must create new ideas and be innovative while also helping the new ideas and innovations become reality. To accomplish this the authors suggest a re-engineering of the curriculum to emphasize the creative aspect of engineering.
+
+\subsection{h.}
+I agree with the authors, especially in that the curriculum should be overhauled. This is true for many subjects in academia, and is certainly not limited to engineering. The accessibility of information is the accessibility of ALL information, therefore the same changes in the way information is transferred necessarily applies to all fields that require rote learning/memorization. Being able to self-teach through use of the internet is essentially being able to do, and know everything. I attended an information session for Webcor Builders, a company based in San Francisco. In the session they spoke about how a new employee had used YouTube to teach herself how to effectively use Revit. The way they phrased the speech certainly sounded like they had expected that to be a capability everyone should have, and they would be right.
+
+\subsection{i.}
+Unfortunately I am a graduate student in the Materials Science department, so I cannot speak directly to this question. Instead I will relate how well I believe my undergraduate institution was at achieving this goal in the Physics department. This is an OK comparison if we consider that, in the classroom, much of engineering and physics is learning how the world works. 
+
+I think that the physics program and Western Washington University is achieving this goal moderately well. A student is expected to provide a solution to a prepared problem to be sure, but the learning is supplemented with projects. Most classes had a small project that involved self-teaching, with guidance from the professor if needed, a subject that was not directly taught in the classroom. The computer is still not the instructor in the way the authors imagine, but the students are being taught to utilize the machines in a self-reliant way.
+
+\subsection{j.}
+My own career goals involve becoming a project engineer and eventually project manager for a general contractor. To fill the gaps in my knowledge I think that personally assigned projects are a good avenue of approach. Public jobs done by publicly traded companies have information about these jobs available online. If I wanted to learn Revit, or do a cost analysis, I could learn on a real project. Though not ‘real time’ I would essentially have a kind of answer key to compare my work to in the real world.
+
+\subsection{k.}
+I will respond to this question as though the entire CEE program is based off of this class alone. The three examples of how the class is meeting this goal (so far) are:
+\begin{enumerate}
+	\item Projects that require research and collaboration and must be accomplished in a timely manner
+	\item Hands on experience using software relevant to the project management position using real data
+	\item Labs that try to foster creative thinking by forcing the students to be prepared for a number of different roles and reach common interest solutions to sate all stakeholders in a given project
+\end{enumerate}
+
+
+\section{Q3: Answers}
+
+\subsection{a.}
+The population of the earth in 1900 was 1.6 billion people and 7 billion by the end of 2010.
+
+\subsection{b.}
+\subsubsection{i.}
+According to un.org the world population in the year 2050 is estimated to be around 9.7 billion people
+\subsubsection{ii.}
+In 1900 the U.S. Census Bureau lists the population of California at 1,485,053. In 2010 the population increased to 37,253,956 million people. By 2050 the predicated population of California is 49,779,362, according to the California Department of Finance.
+
+\subsection{c.}
+\begin{enumerate}
+	\item Energy: Solar farms and other renewable energy sources such as wind turbines are rapidly growing in today's economy. One of the largest solar farms in the world was constructed in California's Mojave desert. It is reasonable to expect many more projects like this in the future, all of which will require skilled engineers.
+	
+	\item Transportation: California's high speed rail is an excellent example of where civil engineers have opportunities in the transportation industry. I believe that the high speed rail is a great mode of transportation, if the project can be completed the results will be self evident. It seems likely that others will wish to follow California's example once they see solid evidence of the effectiveness of the system.
+	
+	\item Housing: High Density Housing Projects will be a necessary commodity in the future. With the world population expected to increase by 2 billion in a few decades, there is going to be a high demand for housing. To prevent urban sprawl clever engineering solutions will be needed.
+	
+	\item Material Resources Recovery and Recycling: Modern Recycling plants are a must have in any environmentally conscious community. The plants we have now have limited funding and our landfills are reaching capacity at ever increasing rates. We need solutions to these growing problems.
+	
+	\item Biomaterials and Health: Medical facilities will certainly need to be renovated to keep up with current technologies and new medical facilities will be needed to meet the demands of an increasing population.
+\end{enumerate}
+
+
+
+\section{Q4: Answers}
+
+\subsection{a.}
+\begin{itemize}
+	\item Owner
+	\begin{enumerate}
+		\item provide complete and accurate information regarding site and design objectives
+		\item finance the project 
+		\item pay the agencies involved in constructing the project
+	\end{enumerate}
+	\item Architect or Engineer
+	\begin{enumerate}
+		\item prepares plans and specs for the project
+		\item interpret and revise plans and specs to address actual construction conditions
+		\item serve as an agent for the owner in construction phase services
+	\end{enumerate}
+	\item General Contractor
+	\begin{enumerate}
+		\item build the project in conformity to the plans and specs
+		\item evaluate the project site and inform design professional of any omissions etc.
+		\item coordinate all phases of construction with its various subcontractors and arrange for all inspections
+	\end{enumerate}
+	\item Construction Manager
+	\begin{enumerate}
+		\item review conceptual designs and provide advice on constructibility, materials selection, etc
+		\item develop and update construction schedules, prepare budget, estimates, and bid analysis
+		\item conducts on-site meetings with various involved parties, implements change order system and review CCO requests
+	\end{enumerate}
+\end{itemize}
+
+\subsection{b.}
+The nine different infrastructure project delivery methods are:
+\begin{enumerate}
+	\item Design-Bid-Construct
+	\item Project Management
+	\item Design Build
+	\item Multiple Prime
+	\item Fast Track
+	\item Turnkey Projects
+	\item Performance-Based Contracting
+	\item Design Build Operate Transfer (DBOT)
+	\item Partnering \& Team Building
+\end{enumerate}
+
+\subsection{c.}
+The traditional approach is the Design-Bid-construct delivery method. The owner will hire a designer to complete plans. The finalized plans will be bid on by several contractors and the owner will select the bid they deem most desirable (often the lowest bid). Once the bid has been awarded the contractor can begin construction.
+
+\subsection{d.}
+\begin{enumerate}
+	\item Design-Bid-Build
+	\begin{itemize}
+		\item The owner is able to select a low bid from a responsible, responsive contractor.
+	\end{itemize}
+	\item Design-Build
+	\begin{itemize}
+		\item This method provides savings in cost and time by eliminating the difficulties of dealing with multiple entities on one project.
+	\end{itemize}
+	\item PM/CM
+	\begin{itemize}
+		\item The owner gets the expertise of the PM/CM who manages the project while keeping the owner and all other interested parties fully informed about the project.
+	\end{itemize}
+	\item Multiple Prime Contracting
+	\begin{itemize}
+		\item The public owner takes control of multiple prime contractors which gives them substantial control over the entire construction process.
+		\item The downside is that the public agency may be responsible for cost overruns due to scheduling conflicts and other issues related to communication and scheduling.
+	\end{itemize}
+	\item Performance Based
+	\begin{itemize}
+		\item The owner is able to give a specific set of conditions that the building needs and nothing more making small the time the owner has to spend working with the designer.
+		\item the downfall of this process is that there is a greater chance of dispute in the project outcome. The design and construction quality may not be up to owners expectations.
+	\end{itemize}
+	\item Design-Build-Operate-Transfer
+	\begin{itemize}
+		\item This process can be good for local public entities that are short on money, the contractor is allowed to operate the facility for a time to regain capital spent during the construction.
+		\item The downside is that a private authority may have too much control over public services.
+	\end{itemize}
+\end{enumerate}
+
+\subsection{e.}
+The author states that projects should evolve within an evaluative framework of urgent and long-term community needs. The worth of a project should be evaluated on its "...fundamental merits and true costs." He then goes on to say that a local, elected public body is traditionally the best option when considering the needs of the community.
+
+\subsection{f.}
+NEPA and CEQA were passed at the federal level in 1969 and 1970 respectively. 
+
+\subsection{g.}
+Several related laws were passed soon after NEPA.
+\begin{enumerate}
+	\item California Environmental Quality Act (CEQA), 1970
+	\item National Clean Air Act (NCAA), 1970
+	\item Endangered Species Act (ESA), 1973
+	\item Federal Water Pollution Act Amendments (FWPAA), 1972
+	\item Resource Conservation and Recovery Act (RCRA), 1976
+	\item Comprehensive Environmental Response, Compensation and Liability Act (CERCLA), 1980
+\end{enumerate}			
+
+\subsection{h.}
+An environmental impact statement (EIS) is a document prepared by the Federal government that describes the effects of a proposed project on the environment. An environmental impact report (EIR) is a more substantial review that is delivered in addition to, and after the EIS by the state of California. A Negative Declaration is given by the lead agency if the project is deemed to have so little environmental impact that an EIS or EIR is not required.
+
+\subsection{i.}
+Permit authority is	an agency that has the authority to exercise a "Go - No Go" over many projects. 
+
+\subsection{j.}
+The agencies that have permit authority of construction projects in California are:
+\begin{itemize}
+	\item California Environmental Protection Agency
+	\item California Coastal Commission
+	\item California Air Resources Board
+	\item California Integrated Waste Management Board
+	\item Department of Pesticide Regulation
+	\item Department of Toxic Substances Control
+	\item Office of Environmental Health Hazard Assessment
+	\item State Water Resources Control Board
+	\item Department of Fish and Game
+	\item Cal Occupational \& Health Administration
+	\item The Division of the State Architect
+\end{itemize}
+
+The are also federal agencies that have jurisdiction over California projects even if there are no federal funds or grants involved. These agencies are:
+\begin{itemize}
+	\item U.S. Environmental Protection Agency
+	\item U.S. Department of Defence
+	\item U.S. Army Corps of Engineers
+	\item U.S. Coast Guard
+\end{itemize}
+
+\subsection{k.}
+A strategic lawsuit against public participation (SLAPP) is a libel or slander suit used by the developers and sponsors of a project. A SLAPP is intended to censor, intimidate, and silence critics by burdening them with the cost of a legal defence until they abandon their criticism or opposition.
+
+\subsection{l.}
+As a good strategy to get a project though the review process the author recommends:
+\begin{itemize}
+	\item engage the community in outreach and discussion of legal issues
+	\item embrace environmental mitigation steps
+	\item meet with opponents to negotiate or mitigate environmental concerns, legitimate or not
+\end{itemize}
+
+\subsection{m.}
+A bond is a means of financing that involves borrowing money to be paid back over an agreed upon amount of time, often with a fixed interest rate though the rate can be variable in some cases.
+
+\subsection{n.}
+The major points defining state general obligation,lease-revenue bonds, municipal bonds, and traditional revenue bonds are:
+\begin{itemize}
+	\item involves borrowing money to be paid back over time with interest
+	\item the bond network relies upon an established network of investment firms, law firms, and institutional investors
+	\item if prevailing interests rates dip below the interest rate of the bond, the bond becomes more valuable, the opposite is also true
+	\item the value of bonds is affected by the rate of inflation which has a tendency to erode the value of bonds
+	\item interest on bonds that are used for public infrastructure are exempt from the investors federal and California state income taxes
+	\item General obligation bonds are approved by voters of the state of California. Payment is guaranteed by the state of California's general taxing power
+	\item Lease-revenue bonds are authorized by the Legislature and do not require voter approval. They are also not guaranteed and as such have a higher interest rates and costs than general obligation bonds
+	\item municipal government bonds are property based and require a 55\% approval vote.
+	\item traditional revenue bonds are paid off from a designated revenue stream usually generated by the projects they finance (i.e. bridge tolls)
+	\item traditional revenue bonds normally do not require voter approval
+\end{itemize}
+
+\subsection{o.}
+The thresholds of voter approval for each type of bond is:
+\begin{itemize}
+	\item state general obligation bonds: 50\%
+	\item lease-revenue bonds: 0\%
+	\item municipal bonds: 55\%
+	\item traditional revenue bonds: 0\%
+\end{itemize}
+
+\subsection{p.}
+The five types of dispute resolution listed by the author are:
+\begin{enumerate}
+	\item Litigation
+	\begin{itemize}
+		\item Documentary Evidence is very important
+		\item Claim must be presented in a manner that both court and jury can understand
+		\item involves same familiar stages as any other type of litigation: discovery, pretrial motions, trail, post-trial motions, and appeal.
+	\end{itemize}
+	\item Arbitration
+	\begin{itemize}
+		\item a third party is designated to resolve disputes outside of the courts
+		\item evidence is presented to the arbitration panel from each side
+		\item the panel must reach a decision within a set time, typically 30 days, after the close of hearings
+	\end{itemize}
+	\item Mediation
+	\begin{itemize}
+		\item the mediator is a private, third party, agreed upon by all parties
+		\item the mediation process is informal whereby the mediator identifies the strengths and weaknesses in each party's case and attempts to find a fair resolution
+		\item nothing said or prepared for the mediations session(s) is admissible in later court proceedings
+	\end{itemize}
+	\item Judicial Arbitration
+	\begin{itemize}
+		\item governed by Code of Civil Procedure \textsection 1141.10 - 1141.3
+		\item arbitration is required by the courts before the case can go to trail
+		\item mandatory submission to at-issue civil cases in a superior court with more than 18 judges if, in the opinion of the court, the amount in controversy will not exceed \$50,000 for each plaintiff.
+	\end{itemize}
+	\item Dispute Review Boards
+	\begin{itemize}
+		\item typically consists of three senior, or retired, construction and public works professionals with broad experience in the type of work being undertaken
+		\item the board will meet regularly, often once a quarter
+		\item depending on the project language, the DRB's recommendations may, or may not, be admissible in later proceedings
+	\end{itemize}
+\end{enumerate}
+
+
+\section{Q5: Answers}
+
+\subsection{a.}
+\begin{itemize}
+	\item site: {\small http://tinyurl.com/z3f24hs}
+	\item date accessed: 16 January 2017
+	\item time accessed: 18:45 
+\end{itemize}
+The total annual state budget for California in the 2016-17 year was \$170,862,847
+\subsection{b.}
+
+\subsubsection{i. High Speed Rail}
+\begin{itemize}
+	\item site: {\small http://tinyurl.com/zxgqhph}
+	\item date accessed: 16 January 2017
+	\item time accessed: 10:51
+\end{itemize}
+
+The funding for this project will come from state general obligation bonds and federal grants (authorized under the American Recovery and Reinvestment Act and the High-Speed Intercity Passenger Rail Program)
+
+\subsubsection{ii. State Highway and Road Repair}
+\begin{itemize}
+	\item site: {\small http://tinyurl.com/znp96br}
+	\item date accessed: 16 January 2017
+	\item time accessed: 11:13
+\end{itemize}
+
+The funding for this project will come from multiple different state funds including the Transportation Tax Fund, and the State Transportation Fund. In addition to state funds the voters approved the issuance of \$19.925 billion in state general obligation bonds of which some is allocated to improving transportation.
+
+\subsubsection{iii. Increased Water Storage (Dams and Reservoirs)}
+\begin{itemize}
+	\item site: {\small http://tinyurl.com/h2gbqgv}
+	\item date accessed: 17 Jan 2017
+	\item time accessed: 18:55
+\end{itemize}
+
+The 2016 California Water Action Plan states that the funding for these projects will come from federal grants and loans, general obligation bonds, revenue bonds, rate payer dollars, local initiatives, user fees, beneficiary fees, local and statewide taxes, public-private partnerships, and more. However the action plan also states that some of the legislation allowing the use of public funds for water related fees needs to be "clarified" by the administration. Thus some of the above tax funds will likely only be available until such clarifications are made.
+
+\subsubsection{iv. Delta Pipelines}
+\begin{itemize}
+	\item site: {\small http://tinyurl.com/jfe5n47}
+	\item date accessed: 17 Jan 2017
+	\item time accessed: 19:21
+\end{itemize}
+
+Kip Lipper from the office of the Senate pro tempore is quoted saying "...the project will be funded through revenue bonds..." One of the main controversy's of this proposed project is who will repay those bonds. The water ratepayers in southern California and the corporate agriculture interests are the target stakeholders. Many believe that the average citizens will end up bearing the brunt of the cost for a project that will mainly benefit agriculture industry of southern California.
+\section{Q6: Answers}
+
+\subsection{a.}
+The current cost overrun at the time of writing of the article was \$1.6 billion 
+
+\subsection{b.}
+The Sacyr SA from Spain is the principal firm. There is also Impreglio of Italy.
+
+\subsection{c.}
+The Canal Authority claims that the overruns are due to Sacyr SA halted work and delaying the project.
+
+\subsection{d.}
+Another suggestions for the overruns is that the Italian firm Impregilo submitted an unrealistically low bid which the Panamanian government, "...all too eagerly snapped up..."
+
+\subsection{e.}
+The Panamanian government is the owner of the project.
+
+\subsection{f.}
+Since negotiations have broken down it would seem that the next likely way to settle the dispute is through an international arbitrage panel, possibly convened in the United States.
+
+\subsection{g.}
+Article URL: {\small http://tinyurl.com/hnvb63s}\vspace{1em}
+
+
+As of July 2016 the arbitration was set for the coming week in Miami, FL. The claim dispute of the now \$3.5 billion in cost overruns was held behind closed doors. The project was two years over schedule and the construction consortium claims that the geology of the site was not what they expected which resulted in the late finish date. The Panama Canal Authority claims that the project was design-build, the construction consortium was not supplied with plans and that they determined their own method for building the dam. The consortium "should have done more field explorations before bidding on the project."
+\vspace{1em}
+
+\noindent I'm a bit confused at this point. How can the process be design-build if there was a bid phase?
+
+\subsection{h.}
+As mentioned above the overrun problem could not be settles through negotiation and went arbitration in a third party country. The cost overrun had doubled by July 2016 with further issues beyond slow construction. The consortium had also claimed the amount and quality of basalt rock needed on site for the concrete was not provided as promised by the Panama Canal Authority.
+
+\subsection{i.}
+Five potential stakeholders for the Nicaragua canal are:
+\begin{enumerate}
+	\item HKND Group: This is the Hong Kong-based firm that is backing the project. Thus successful completion of the project would give them a huge revenue stream through operations
+	\item U.S. Sea Ports: The port will allow for the passage of super tankers that even the expanded panama canal cannot accommodate The allowable increase in shipping traffic could prompt private interests in the U.S. to expand thus leading to busier ports in the U.S.
+	\item Nicaraguan Citizens: The construction of the canal would provide millions of jobs and set the country's growth rate to as high as 15\%.
+	\item Chinese Government: Easier access to crude oil from Venezuela and a greater foothold in the Western Hemisphere.
+	\item Environmental Activist Groups: The environmental concerns are huge for a project of this scale in this region of the world. The project would certainly destroy huge swathes of rain forest. The canal would also likely go through Lake Nicaragua, the largest freshwater body in Central America. Scientists claim that even a small spill into this body of water would ruin it as a source of irrigation or drinking water.
+\end{enumerate}
+
+\subsection{j.}
+The project is projected to cost as much as \$60 billion and take a decade to complete.
+
+\subsection{k.}
+Two environmental concerns are: 1) the amount of rainforest that would need to be cleared, and 2) the path of the canal would move through Lake Nicaragua, the largest freshwater body in Central America.
+
+\subsection{l.}
+Seismic and climatic conditions are construction risks. Two volcanoes exist on an island within the Lake Nicaragua. An operational risk is the extreme winds on the Lake which could cause ships to run off course, a serious matter in a small canal.
+
+\subsection{m.}
+This looks like a DBOT project. The HKND Group was granted a concession to design, build, and operate the canal. After a decade of operation, Nicaragua would gain 10\% ownership of the canal, and around 1\% each year after.
+
+\subsection{n.}
+Article URL: {\small http://tinyurl.com/j5h9hpr}\vspace{1em}
+
+At the time of the writing of the article, April 2016, no progress had been made on the canal. The Chinese based firm HKND Group has made its operations closed to the public, and secret enough that no information has been leaked at all. There is much speculation that the project is dead and that Mr. Wang, the chairman of HKND Group, has lost up to 80\% of his \$10 billion fortune. There is strong opposition to the canal from environmental activists and Nicaraguan landowners in the path of the canal. There is concern among citizens that the agreement between Mr. Wang and the Nicaraguan government, which has been constitutionalized, gives him sweeping rights to land in the entire country, not just land in the path of the canal.
+
+\begin{itemize}
+	\item Currently the canal has made zero progress
+	\item The stakeholders include those listed above in 5.i as well as local tribes, endangered species whose habitat is in the path of the canal.
+	\item The major issues in constructing the project appear to be funding from the HKND Group and whether or not the Chinese government wants to back the private venture. Other issues arise from the local citizens who would be displaced if the canal were to be built. The government made an agreement with Mr. Wang that the HKND Group could purchase the land that the canal would move through at a mere 5\% of the market price which had made many lifelong farmers in the area furious.
+\end{itemize}
+
+
+
+\end{document}
