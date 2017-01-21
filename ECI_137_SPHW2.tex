@@ -1,0 +1,173 @@
+
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article} 
+\usepackage{amsmath, amsthm, amssymb} % AMS Math Package
+\usepackage{graphicx} % Allows for eps images
+\usepackage{multicol} % Allows for multiple columns
+\usepackage{framed,color}
+\usepackage{fancybox}
+\usepackage{mdframed}
+\usepackage{float}
+\usepackage{caption,subcaption}
+
+
+\usepackage{geometry}
+\geometry{
+top=0.5in,
+inner=0.5in,
+outer=0.5in,
+bottom=0.5in,
+headheight=1ex,
+headsep=3ex
+}
+
+
+ % Sets margins and page size
+\pagestyle{empty} % Removes page numbers
+\makeatletter % Need for anything that contains an @ command 
+\renewcommand{\maketitle} % Redefine maketitle to conserve space
+{ \begingroup \vskip 10pt \begin{center} \large {\bf \@title}
+	\vskip 10pt \large \@author \hskip 20pt \@date \end{center}
+  \vskip 10pt \endgroup \setcounter{footnote}{0} }
+\makeatother % End of region containing @ commands
+\renewcommand{\labelenumi}{(\alph{enumi})} % Use letters for enumerate
+% \DeclareMathOperator{\Sample}{Sample}
+\let\vaccent=\v % rename builtin command \v{} to \vaccent{}
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} 
+% for vectors of Greek letters
+\newcommand{\uv}[1]{\ensuremath{\mathbf{\hat{#1}}}} % for unit vector
+\newcommand{\abs}[1]{\left| #1 \right|} % for absolute value
+\newcommand{\avg}[1]{\left< #1 \right>} % for average
+\let\underdot=\d % rename builtin command \d{} to \underdot{}
+\renewcommand{\d}[2]{\frac{d #1}{d #2}} % for derivatives
+\newcommand{\dd}[2]{\frac{d^2 #1}{d #2^2}} % for double derivatives
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
+% for partial derivatives
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}} 
+% for double partial derivatives
+\newcommand{\pdc}[3]{\left( \frac{\partial #1}{\partial #2}
+ \right)_{#3}} % for thermodynamic partial derivatives
+\newcommand{\ket}[1]{\left| #1 \right>} % for Dirac bras
+\newcommand{\bra}[1]{\left< #1 \right|} % for Dirac kets
+\newcommand{\braket}[2]{\left< #1 \vphantom{#2} \right|
+ \left. #2 \vphantom{#1} \right>} % for Dirac brackets
+\newcommand{\matrixel}[3]{\left< #1 \vphantom{#2#3} \right|
+ #2 \left| #3 \vphantom{#1#2} \right>} % for Dirac matrix elements
+\newcommand{\grad}[1]{\gv{\nabla} #1} % for gradient
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \cdot #1} % for divergence
+\newcommand{\curl}[1]{\gv{\nabla} \times #1} % for curl
+\let\baraccent=\= % rename builtin command \= to \baraccent
+\renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{dfn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancyplain}
+\usepackage{lastpage}
+\usepackage{siunitx}
+\pagenumbering{arabic}
+
+\lhead{Kyle Hoke}
+\chead{ECI 137, SPHW 2}
+\rhead{Page \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyfoot[C]{}
+
+%%% section* TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+
+%%% User Defined Commands %%%%
+\newcommand{\f}[1]{f_{#1}(x)}
+\newcommand{\axis}{
+		\draw[->,thick](0,0) -- (0,5);
+		\node[above] at (0,5) {$x$};
+		\draw[->,thick](0,0) -- (5,0);
+		\node[right] at(5,0){$y$};
+		}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END OF HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%% BEGIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\LARGE ECI 137 SPHW 2}
+\author{Kyle Hoke}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+I have used a spreadsheet to calculate the values in each of these problems.
+
+\section{}
+	Answer: a 
+	\vspace{1em}
+	
+	\noindent Reasoning: By the equation dictating the contract score, the qualifications of the contractor can boost the overall score by as much as 60 points (assuming a technical score of 100 is the best). A bid of \$10 million would recieve 0 points if not for the technical scores.
+
+\section{}
+	Answer: a
+	\vspace{1em}
+	
+	\noindent With a score of 54
+	
+\section{}
+	Answer: a
+	\vspace{1em}
+	
+	\noindent Reasoning: If we increase the number of days to complete the job over 300, the contractors profit goes down, and up if we decrease below 300, thus there is a schedule reduction incentive. Similarly, if we place the underestimation of the cost lower, the contractor profit goes up, and the profit goes down if we raise the underestimate, thus there is a cost reduction incentive as well.
+	
+	
+\section{}
+	Answer: c
+	\vspace{1em}
+	
+\section{}
+	Answer: d
+	\vspace{1em}
+	
+	\noindent If the contractor complete the job 10 days early the gross profit increases to \$2.22 million dollars
+	
+\section{}
+	Answer: a
+	\vspace{1em}
+	
+	\noindent Reasoning: The contractor will lose money if they underestimate the actual cost, while the owner's payment is not effected at all.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
